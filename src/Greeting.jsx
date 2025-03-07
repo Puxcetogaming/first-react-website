@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Greeting({ name }) {
-    return <h1>Hello, {name}!</h1>;
+function Greeting() {
+    const [userName, setUserName] = useState("User");
+
+    return (
+        <div>
+            <input
+                type='text'
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                placeholder='Enter User Name' 
+            />
+
+            <h1>Hello, {userName}!</h1>;
+        </div>
+    )
 }
 
 export default Greeting;
