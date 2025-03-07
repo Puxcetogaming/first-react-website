@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Greeting from './Greeting';
 import Calculator from './Calculator';
 import AlertEvent from './Alert';
+import MultipleInput from './MultipleInput';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
       </div>
       <div>
         <AlertEvent />  
+        <MultipleInput />
       </div>
     </div>
   );
