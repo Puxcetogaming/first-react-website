@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Greeting from './Greeting';
 import Calculator from './Calculator';
+import AlertEvent from './Alert';
+
 
 function App() {
   const [userName, setUserName] = useState("User");
@@ -12,15 +14,19 @@ function App() {
   
   return (
     <div>
-      <input
-        type='text'
-        value={userName}
-        onChange={(e) => setUserName(e.target.value)}
-        placeholder='Enter User Name' 
-      />
-      <Greeting name={userName} />
-      <p>The Button Has Been Clicked {clickCount} times.</p>
-      <button onClick={() => setClickCount(clickCount + 1)}>Click Me</button>
+      <div>
+        <input
+          type='text'
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          placeholder='Enter User Name' 
+        />
+        <Greeting name={userName} />
+      </div>
+      <div>
+        <p>The Button Has Been Clicked {clickCount} times.</p>
+        <button onClick={() => setClickCount(clickCount + 1)}>Click Me</button>
+      </div>
       <div>
         <input 
           type="number" 
@@ -43,8 +49,11 @@ function App() {
           <option value="*">*</option>
           <option value="/">/</option>
         </select>
+        <Calculator num1={number1} num2={number2} operator={operator} />
       </div>
-      <Calculator num1={number1} num2={number2} operator={operator} />
+      <div>
+        <AlertEvent />  
+      </div>
     </div>
   );
 }
