@@ -3,6 +3,7 @@ import Greeting from './Greeting';
 import Calculator from './Calculator';
 import AlertEvent from './Alert';
 import MultipleInput from './MultipleInput';
+import Timer from './Timer';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
       <div>
         <AlertEvent />  
         <MultipleInput />
+        <Timer />
       </div>
     </div>
   );
