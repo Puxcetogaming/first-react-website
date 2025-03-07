@@ -34,12 +34,15 @@ function App() {
           onChange={(e) => setNumberTwo(Number(e.target.value))} 
           placeholder="Enter second number" 
         />
-        <input 
-          type="text" 
+        <select 
           value={operator} 
-          onChange={(e) => setOperation(e.target.value)} 
-          placeholder="Enter operator" 
-        />
+          onChange={(e) => setOperation(e.target.value)}
+        >
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
       </div>
       <Calculator num1={number1} num2={number2} operator={operator} />
     </div>
