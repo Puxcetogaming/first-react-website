@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Calculator() {
   const [number1, setNumberOne] = useState(0);
   const [number2, setNumberTwo] = useState(0);
-  const [operator, setOperation] = useState("");
+  const [operator, setOperation] = useState("+");
 
 
   let result;
