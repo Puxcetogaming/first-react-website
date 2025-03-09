@@ -1,21 +1,24 @@
 // src/pages/Images/Images.jsx
 import React from "react";
 import { Link } from 'react-router-dom';
-import Image1 from "../../assets/Image1.png";
-import Image2 from "../../assets/Image2.png";
+import images from "../../utils/ImageMap";
+import "./Image.css"; // assuming your CSS grid styles are here
 
 function Images() {
-    return (
-        <div>
-            <h1>Images Page</h1>
-            <Link to="/images/1">
-              <img src={Image1} alt="" />
-            </Link>
-            <Link to="/images/2">
-              <img src={Image2} alt="" />
-            </Link>
-        </div>
-    );
+  const imageEntries = Object.entries(images);
+
+  return (
+    <div>
+      <h1>Images Page</h1>
+      <div className="image-grid">
+        {imageEntries.map(([key, src]) => (
+          <Link to={`/images/${key}`} key={key}>
+            <img src={src} alt={key} />
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Images;

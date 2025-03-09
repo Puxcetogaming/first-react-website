@@ -1,28 +1,23 @@
 // src/pages/Images/Image.jsx
 import React from "react";
 import { useParams } from "react-router-dom";
-import Image1 from "../../assets/Image1.png";
-import Image2 from "../../assets/Image2.png";
-
-const ImageToSelect = {
-    "1": Image1,
-    "2": Image2,
-};
+import images from "../../utils/ImageMap";
 
 function Image() {
-    const { image } = useParams(); // Make sure the name matches :image in the route
-    const imageUrl = ImageToSelect[image] || null;
+  // The parameter name here ("image") should match the one defined in your route
+  const { image } = useParams();
+  const imageUrl = images[image] || null;
 
-    return (
-        <div>
-            <h1>Image: {image}</h1>
-            {imageUrl ? (
-                <img src={imageUrl} alt="" />
-            ) : (
-                <p>No image found for this ID.</p>
-            )}
-        </div>
-    );
+  return (
+    <div>
+      <h1>Image: {image}</h1>
+      {imageUrl ? (
+        <img src={imageUrl} alt={`${image}`} />
+      ) : (
+        <p>No image found for this ID.</p>
+      )}
+    </div>
+  );
 }
 
 export default Image;
