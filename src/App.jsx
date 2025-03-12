@@ -10,6 +10,7 @@ import MultipleInput from './pages/MultipleInput/MultipleInput';
 import Timer from './pages/Timer/Timer';
 import Images from './pages/Images/Images';
 import Image from './pages/Images/Image'; // Import your dynamic image component
+import Form from './pages/Form/Form';
 import './App.css';
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
           <Link to="/alertevent">Alert Event</Link> | 
           <Link to="/multipleinput">Multiple Input</Link> | 
           <Link to="/timer">Timer</Link> | 
-          <Link to="/images">Images</Link>
+          <Link to="/images">Images</Link> |
+          <Link to="/form">Form</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -34,6 +36,7 @@ function App() {
           <Route path="/alertevent" element={<AlertEvent />} />
           <Route path="/multipleinput" element={<MultipleInput />} />
           <Route path="/timer" element={<Timer />} />
+          <Route path="/form" element={<Form />} />
           {/* The route for the images list */}
           <Route path="/images" element={<Images />} />
           {/* The dynamic route for an individual image */}

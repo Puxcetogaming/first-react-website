@@ -1,4 +1,4 @@
-// src/utils/imageMap.js
+// src/utils/imageMap.jsx
 function importAll(r) {
     let images = {};
     r.keys().forEach((item) => {
